@@ -27,19 +27,20 @@ public class SetTest {
 	@Test
 	@DisplayName("set의 size()메서드를 통해 set의 크기를 알 수 있다.")
 	void whenUseSize_thenGetRealSizeOfSet() {
-		assertThat(numbers.size()).isEqualTo(3);
+		int expected = 3;
+		assertThat(numbers.size()).isEqualTo(expected);
 	}
 
 	@ParameterizedTest
 	@ValueSource(ints = {1, 2, 3})
-	// @DisplayName("set의 contains()메서드를 통해 set에 특정 원소가 포함되어 있는지 알 수 있다.")
+		// @DisplayName("set의 contains()메서드를 통해 set에 특정 원소가 포함되어 있는지 알 수 있다.")
 	void whenUseContains_thenGetTrueOrFalse(int number) {
 		assertThat(numbers.contains(number)).isTrue();
 	}
 
 	@ParameterizedTest
 	@CsvSource(value = {"1:true", "2:true", "3:true", "4:false", "5:false"}, delimiter = ':')
-	// @DisplayName("set의 contains()메서드를 통해 set에 특정 원소가 포함되어 있음을 올바르게 반환하는지 알 수 있다.")
+		// @DisplayName("set의 contains()메서드를 통해 set에 특정 원소가 포함되어 있음을 올바르게 반환하는지 알 수 있다.")
 	void whenUseContains_thenGetTrueOrFalse(int number, boolean expected) {
 		assertThat(numbers.contains(number)).isEqualTo(expected);
 	}

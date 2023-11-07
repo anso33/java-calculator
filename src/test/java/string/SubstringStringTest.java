@@ -10,8 +10,10 @@ public class SubstringStringTest {
 	@Test
 	@DisplayName("(1,2)값이 주어졌을 때 ()를 제거하고 1,2를 반환한다.")
 	void whenSubstringStringByParentheses_thenRemoveParentheses() {
-		String str = "(1,2)";
-		String substring = str.substring(1, str.length() - 1);
-		assertThat(substring).isEqualTo("1,2");
+		String input = "(1,2)";
+		String output = input.substring(1, input.length() - 1);
+		String expected = "1,2";
+
+		assertThat(output).isEqualTo(expected);
 	}
 }
